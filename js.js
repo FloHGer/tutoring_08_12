@@ -6,7 +6,7 @@ function ex57_7 (start, end, step){
     if(isNaN(end)) end = end.charCodeAt(0);
 
     if (start > end){
-        for (let i = start; i >= end; i -= step){
+        for (let i = start; i >= end; i -= Math.abs(step)){
             if(!isNaN(start1)){
                 output.push(i);
                 continue;
@@ -14,7 +14,7 @@ function ex57_7 (start, end, step){
             output.push(String.fromCharCode(i));
         }
     }
-    for (let i = start; i <= end; i += step){
+    for (let i = start; i <= end; i += Math.abs(step)){
         if(!isNaN(start1)){
             output.push(i);
             continue;
@@ -28,6 +28,7 @@ function ex57_7 (start, end, step){
 
 
 console.log(ex57_7("a", "z", 3));
+console.log(ex57_7("a", "z", -3));
 console.log(ex57_7("Z", "A", 2));
 console.log(ex57_7(0, -5, 1));
 console.log(ex57_7(0, 25, 5));
